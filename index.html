@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCOOTER CONFIG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="./js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+
+</head>
+<body>
+  <p class="h2">CONFIGURACIÓN</p>
+
+  <p id="estado" class="h5">Bloqueo Manual</p>
+
+  <div class="input-group" style="width:285px">
+    <div class="input-group-text">
+      
+      <div class="form-check form-switch">
+       
+        <input class="form-check-input" type="checkbox" id="bloqueo" value="" onclick="myFunction(this)">
+        <label class="form-check-label" for="flexSwitchCheckDefault"></label>     
+
+      </div>
+    </div>
+    <input type="text" class="form-control" id="password" placeholder="Ingrese contraseña">  
+
+  </div>
+  <div id="estado2" hidden="false">
+    <br>
+    <button type="button" id="CambiarPass" class="btn btn-primary btn" value="" onclick="ChangePass(this)">Cambiar contraseña</button>
+
+  </div>
+
+  <br>
+
+  <p class="h4">AUTO-bloqueo</p>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="TiempoBloqueo" id="CambiarTiempo" value="0" checked onchange="sendData(this)">    
+      AL APAGAR
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="TiempoBloqueo" id="CambiarTiempo" value="60" onchange="sendData(this)">    
+      1 minuto
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="TiempoBloqueo" id="CambiarTiempo" value="300" onchange="sendData(this)">    
+      5 minutos
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="TiempoBloqueo" id="CambiarTiempo" value="-1" onchange="sendData(this)">    
+      NUNCA
+    </label>
+  </div>
+
+  <!--
+  <div>
+    Radio:<br>
+    <input type="text" id="ledNumber" name="ledNumber" value="10" checked><br>
+    <input type="radio" id="ledOn" name="status" value="true" checked>
+    <label for="ledOn">ON</label><br>
+    <input type="radio" id="ledOff" name="status" value="false">
+    <label for="ledOff">OFF</label><br>
+    <button type="button" onclick="sendData()">Send data</button>
+  </div>
+  <div>
+    <br>
+    <button type="button" onclick="getData()">Get Data!</button>
+    <label id="receivedText"/>
+  </div>
+-->
+
+
+</body>
+</html>
