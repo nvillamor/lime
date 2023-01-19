@@ -65,6 +65,7 @@ function ChangePass(elemento) {
     
     document.getElementById('password').value = "";
     document.getElementById('password').placeholder = "Contraseña modificada";
+    document.getElementById('CambiarPass').hidden = true;
     sendData(elemento);
   }
 }
@@ -77,9 +78,13 @@ function myFunction(elemento) {
       if (checkBox.checked) {
         document.getElementById('estado').innerHTML = "Monopatín DESBLOQUEADO";
         document.getElementById('estado').style.color = "red";
-        document.getElementById('estado2').hidden = false;
+        document.getElementById('CambiarPass').hidden = false;
         document.getElementById('password').value = "";
         document.getElementById('password').placeholder = "Ingrese nueva contraseña";
+        const collection = document.getElementsByName("TiempoBloqueo");
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].disabled = false;
+        }
       } else {
         BLOQUEO();
       } 
@@ -101,8 +106,17 @@ function myFunction(elemento) {
 
   function BLOQUEO() {
     document.getElementById('estado').innerHTML = "Monopatín BLOQUEADO";
+    document.getElementById('password').placeholder = "Ingrese contraseña";
     document.getElementById('estado').style.color = "green";
     document.getElementById('bloqueo').checked = false;
-    document.getElementById('estado2').hidden = true;
+    document.getElementById('CambiarPass').hidden = true;
+    document.getElementsByName('TiempoBloqueo').disabled = true;
+    
+    const collection = document.getElementsByName("TiempoBloqueo");
+    for (let i = 0; i < collection.length; i++) {
+      collection[i].disabled = true;
+    }
+    
+
   }
 

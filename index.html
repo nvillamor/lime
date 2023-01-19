@@ -16,7 +16,7 @@
 
   <p id="estado" class="h5">Bloqueo Manual</p>
 
-  <div class="input-group" style="width:285px">
+  <div class="input-group" style="width:fit-content">
     <div class="input-group-text">
       
       <div class="form-check form-switch">
@@ -27,14 +27,17 @@
       </div>
     </div>
     <input type="text" class="form-control" id="password" placeholder="Ingrese contraseña">  
-
+    <button id="CambiarPass" class="btn btn-primary btn" type="button" value="" hidden onclick="ChangePass(this)">OK</button>
   </div>
+  
+  <!--
   <div id="estado2" hidden="false">
     <br>
+    
     <button type="button" id="CambiarPass" class="btn btn-primary btn" value="" onclick="ChangePass(this)">Cambiar contraseña</button>
-
+    
   </div>
-
+  -->
   <br>
 
   <p class="h4">AUTO-bloqueo</p>
