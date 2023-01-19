@@ -1,3 +1,10 @@
+:root{
+    /* paleta de colores */
+
+    --color-principal: #80d0e2d7;
+    --color-secundario: #c3c3c3;
+    --color-terciario: #ecf0f3;
+}
 
 * {
     box-sizing: border-box;
@@ -7,7 +14,7 @@
 
 
 body {
-    background-color: #ecf0f3;
+    background-color: var(--color-terciario);
     font-family: futura-pt, sans-serif;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     display: grid;
@@ -33,11 +40,26 @@ main{
 }
 
 .input-pass{
+    width: 180px;
     text-align: center;
-    background-color: #ecf0f3;
-    font-size: 18px;
+    background-color: var(--color-terciario);
+    font-size: 15px;
     border: 0px;
+    margin-bottom: 20px;
+    outline: none;
+    padding-bottom: 3px;
 }
+
+.input-pass::placeholder{
+    color: var(--color-secundario);
+}
+
+.input-pass:focus{
+    border-bottom: 1px solid black;
+    border-style: dashed;
+    border-color: var(--color-secundario);
+}
+
 
 .contenedor-pass{
     margin-bottom: 10px;
@@ -61,7 +83,7 @@ main{
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid #ecf0f3;
+    border: 2px solid var(--color-terciario);
     border-radius: 20px;
     box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
         -2px -2px 12px rgba(255, 255, 255, 0.5),
@@ -70,7 +92,7 @@ main{
         inset 2px 2px 4px rgba(255, 255, 255, 0.1),
         inset 2px 2px 8px rgba(0, 0, 0, .3),
         2px 2px 8px rgba(0, 0, 0, .3);
-    background-color: #ecf0f3;
+    background-color: var(--color-terciario);
 }
 
 .slider:before {
@@ -85,7 +107,7 @@ main{
         -2px -2px 12px rgba(255, 255, 255, 0.5),
         inset 2px 2px 4px rgba(255, 255, 255, 0.1),
         2px 2px 8px rgba(0, 0, 0, .3);
-    background-color: #ecf0f3;
+    background-color: var(--color-terciario);
     content: "";
     transition: .5s;
 }
@@ -111,19 +133,19 @@ input:checked+.slider:before {
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 350px;
+    height: 360px;
     cursor: pointer;
 }
 
 .config{
     text-align: center;
-    color: #80d0e2d7;
+    color: var(--color-principal);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid #ecf0f3;
+    border: 2px solid var(--color-terciario);
     border-radius: 10px;
     box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
                 -2px -2px 12px rgba(255, 255, 255, 0.5),
@@ -132,7 +154,7 @@ input:checked+.slider:before {
                 inset 2px 2px 4px rgba(255, 255, 255, 0.1),
                 inset 2px 2px 8px rgba(0, 0, 0, .3),
                 2px 2px 8px rgba(0, 0, 0, .3);
-    background-color: #ecf0f3;
+    background-color: var(--color-terciario);
 }
 
 .config:before{
@@ -145,7 +167,7 @@ input:checked+.slider:before {
                 -2px -2px 12px rgba(255, 255, 255, 0.5),
                 inset 2px 2px 4px rgba(255, 255, 255, 0.1),
                 2px 2px 8px rgba(0, 0, 0, .3);
-    background-color: #ecf0f3;
+    background-color: var(--color-terciario);
     content: "";
     transition: .5s;
 }
@@ -175,8 +197,13 @@ input:checked+.slider:before {
     border-radius: 15px;
 }
 
+.inpass:focus{
+    outline: none;
+    border: 2px solid var(--color-principal);
+}
+
 .form-pass input::placeholder{
-    color: #c3c3c3;
+    color: var(--color-secundario);
     font-size: 15px;
 }
 
@@ -184,22 +211,32 @@ input:checked+.slider:before {
     margin-top: 5px;
     width: 80px;
     height: 30px;
-    background-color: #80d0e2d7;
+    background-color: var(--color-principal);
     border: 0px;
     border-radius: 15px;
     text-transform: uppercase;
-    color:white;
+    color:var(--color-terciario);
+    font-weight: bold;
+    font-size: small;
+    box-shadow: 1px 2px 3px var(--color-secundario);
+    cursor: pointer;
 }
+
+.form-pass button:active {
+    background-color: var(--color-principal);
+    box-shadow: 0 5px var(--color-secundario);
+    transform: translateY(4px);
+  }
 
 .negar-pass{
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
 .negar-pass input{
-    background-color: #c3c3c3;
+    background-color: var(--color-secundario);
     border-radius: 50px;
 }
 .negar-pass label{
@@ -216,6 +253,15 @@ input:checked+.slider:before {
 }
 .alineamiento{
     text-align: left;
+    vertical-align: center;
+    font-size: 14px;
+}
+
+.class-opt{
+    margin-bottom: 8px;
+}
+.class-opt:default{
+    border-color: aqua;
 }
 
 .contenedor-setting{
@@ -230,7 +276,6 @@ input:checked+.slider:before {
 
 .btnSetting{
     padding: 0.5em 0.5em;
-    background: #efefef;
     border: none;
     border-radius: .5rem;
     letter-spacing: .2rem;
@@ -262,10 +307,10 @@ input:checked+.slider:before {
     text-align: center;
     font-size: xx-small;
     padding-bottom: 10px;
-    color: #c3c3c3;
+    color: var(--color-secundario);
   }
 
   a{
     text-decoration: none;
-    color: #c3c3c3;
+    color: var(--color-secundario);
   }

@@ -126,5 +126,8 @@ function MostrarConfiguracion(){
   const panel = document.querySelector('.contendorForm');
   const display = panel.getAttribute('style');
   display === "display: none" ? panel.setAttribute("style","display: block") : panel.setAttribute("style","display: none");
-  
+}
+
+function cambiarPass(){
+  console.log('Codigo que cambia la contraseña');
 }

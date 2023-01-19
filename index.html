@@ -24,17 +24,17 @@
             <span class="on"><img src="./img/padlock.png" alt="block.png"></img></span>
             <span class="off"><img src="./img/unlock.png" alt="unblock.png"></img></span>
           </label>
-        <div class="contendorForm" style="display: none;">
+        <div class="contendorForm" style="display: none">
               <div class="config">
                 <div class="titulo">
                   <h3>CONFIGURA TU SCOOTER</h3>
                 </div>
                 <div class="form-pass">
                   <h4 class="subtitulo">Contraseña</h4>
-                  <input placeholder="Ingrese contraseña actual"></input>
-                  <input placeholder="Ingrese contraseña nueva"></input>
-                  <input placeholder="Confirme contraseña nueva"></input>
-                  <button>cambiar</button>
+                  <input type="text" class="inpass" placeholder="Ingrese contraseña actual">
+                  <input type="text" class="inpass" placeholder="Ingrese contraseña nueva">
+                  <input type="text" class="inpass" placeholder="Confirme contraseña nueva">
+                  <button type="button" name="button" onclick=cambiarPass()>cambiar</button>
                   <div class="negar-pass">
                     <input type="checkbox" id="negacion" name="negacion" value="false">
                     <label for="negacion">No solicitar contraseñá</label>
@@ -44,14 +44,14 @@
                 <div class="opciones">
                   <h4 class="subtitulo">Auto-Bloqueo</h4>
                   <div class="alineamiento">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                  <label for="vehicle1"> AL APAGAR</label><br>
-                  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                  <label for="vehicle2"> 1 Minuto</label><br>
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                  <label for="vehicle1"> 5 Minutos</label><br>
-                  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                  <label for="vehicle2"> NUNCA</label><br>
+                      <input type="radio" class="class-opt" id="opcion1" name="opt" value="0">
+                      <label for="opcion1">AL APAGAR</label><br>
+                      <input type="radio" class="class-opt"  id="opcion2" name="opt" value="60">
+                      <label for="vehicle2">1 Minuto</label><br>
+                      <input type="radio" class="class-opt" id="opcion3" name="opt" value="300">
+                      <label for="opcion3">5 Minutos</label><br>
+                      <input type="radio" class="class-opt"  id="opcion4" name="opt" value="-1">
+                      <label for="opcion4">NUNCA</label><br>
                   </div>
 
                 </div>
