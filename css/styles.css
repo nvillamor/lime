@@ -1,0 +1,209 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #ecf0f3;
+    font-family: futura-pt, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.input-pass{
+    text-align: center;
+    background-color: #ecf0f3;
+    font-size: 18px;
+    border: 0px;
+}
+
+.contenedor-pass{
+    margin-bottom: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 210px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #ecf0f3;
+    border-radius: 20px;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 8px rgba(255, 255, 255, 1),
+        inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        inset 2px 2px 8px rgba(0, 0, 0, .3),
+        2px 2px 8px rgba(0, 0, 0, .3);
+    background-color: #ecf0f3;
+}
+
+.slider:before {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    z-index: 999;
+    width: 90px;
+    height: 70px;
+    border-radius: 10%;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, .3);
+    background-color: #ecf0f3;
+    content: "";
+    transition: .5s;
+}
+
+.off {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+}
+
+.on {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
+input:checked+.slider:before {
+    transform: translateX(96px);
+}
+
+.contendorForm{
+    margin-top: 15px;
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 350px;
+    cursor: pointer;
+}
+
+.config{
+    text-align: center;
+    color: #80d0e2d7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #ecf0f3;
+    border-radius: 10px;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+                -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset -2px -2px 8px rgba(255, 255, 255, 1),
+                inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 8px rgba(0, 0, 0, .3),
+                2px 2px 8px rgba(0, 0, 0, .3);
+    background-color: #ecf0f3;
+}
+
+.config:before{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    z-index: 999;
+    border-radius: 50%;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+                -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                2px 2px 8px rgba(0, 0, 0, .3);
+    background-color: #ecf0f3;
+    content: "";
+    transition: .5s;
+}
+
+.titulo{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.subtitulo{
+    margin-bottom: 8px;
+}
+
+.form-pass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 170px;
+}
+
+.form-pass input{
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 18px;
+    border: 0px;
+    border-radius: 15px;
+}
+
+.form-pass input::placeholder{
+    color: #c3c3c3;
+    font-size: 15px;
+}
+
+.form-pass button{
+    margin-top: 5px;
+    width: 80px;
+    height: 30px;
+    background-color: #80d0e2d7;
+    border: 0px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color:white;
+}
+
+.negar-pass{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.negar-pass input{
+    background-color: #c3c3c3;
+    border-radius: 50px;
+}
+.negar-pass label{
+    width: 190px;
+    font-style: italic;
+
+}
+
+.opciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.alineamiento{
+    text-align: left;
+}
