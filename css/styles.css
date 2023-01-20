@@ -1,4 +1,4 @@
-:root{
+:root {
     /* paleta de colores */
 
     --color-principal: #80d0e2d7;
@@ -22,7 +22,7 @@ body {
     min-height: 100vh;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,9 +37,10 @@ main{
     position: relative;
     width: 100%;
     height: calc(100vh-50px);
+    padding-bottom: 25%;
 }
 
-.input-pass{
+.input-pass {
     width: 180px;
     text-align: center;
     background-color: var(--color-terciario);
@@ -50,18 +51,18 @@ main{
     padding-bottom: 3px;
 }
 
-.input-pass::placeholder{
+.input-pass::placeholder {
     color: var(--color-secundario);
 }
 
-.input-pass:focus{
+.input-pass:focus {
     border-bottom: 1px solid black;
     border-style: dashed;
     border-color: var(--color-secundario);
 }
 
 
-.contenedor-pass{
+.contenedor-pass {
     margin-bottom: 10px;
 }
 
@@ -128,7 +129,7 @@ input:checked+.slider:before {
     transform: translateX(96px);
 }
 
-.contendorForm{
+.contendorForm {
     margin-top: 15px;
     position: relative;
     display: inline-block;
@@ -136,7 +137,7 @@ input:checked+.slider:before {
     height: 380px;
 }
 
-.config{
+.config {
     text-align: center;
     color: var(--color-principal);
     position: absolute;
@@ -147,39 +148,40 @@ input:checked+.slider:before {
     border: 2px solid var(--color-terciario);
     border-radius: 10px;
     box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
-                -2px -2px 12px rgba(255, 255, 255, 0.5),
-                inset -2px -2px 8px rgba(255, 255, 255, 1),
-                inset -2px -2px 12px rgba(255, 255, 255, 0.5),
-                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-                inset 2px 2px 8px rgba(0, 0, 0, .3),
-                2px 2px 8px rgba(0, 0, 0, .3);
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 8px rgba(255, 255, 255, 1),
+        inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        inset 2px 2px 8px rgba(0, 0, 0, .3),
+        2px 2px 8px rgba(0, 0, 0, .3);
     background-color: var(--color-terciario);
 }
 
-.config:before{
+.config:before {
     position: absolute;
     bottom: 5px;
     left: 10px;
     z-index: 999;
     border-radius: 50%;
     box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
-                -2px -2px 12px rgba(255, 255, 255, 0.5),
-                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-                2px 2px 8px rgba(0, 0, 0, .3);
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, .3);
     background-color: var(--color-terciario);
     content: "";
     transition: .5s;
 }
 
-.titulo{
+.titulo {
     margin-top: 15px;
     margin-bottom: 10px;
 }
-.subtitulo{
+
+.subtitulo {
     margin-bottom: 8px;
 }
 
-.form-pass{
+.form-pass {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -188,7 +190,7 @@ input:checked+.slider:before {
     width: 170px;
 }
 
-.form-pass input{
+.form-pass input {
     text-align: center;
     margin-bottom: 5px;
     font-size: 18px;
@@ -196,25 +198,26 @@ input:checked+.slider:before {
     border-radius: 15px;
 }
 
-.inpass:focus{
+.inpass:focus {
     outline: none;
     border: 2px solid var(--color-principal);
 }
 
-.form-pass input::placeholder{
+.form-pass input::placeholder {
     color: var(--color-secundario);
     font-size: 15px;
 }
 
-.form-pass button{
+.form-pass button {
     margin-top: 5px;
+    margin-bottom: 15px;
     width: 80px;
     height: 30px;
     background-color: var(--color-principal);
     border: 0px;
     border-radius: 15px;
     text-transform: uppercase;
-    color:var(--color-terciario);
+    color: var(--color-terciario);
     font-weight: bold;
     font-size: small;
     box-shadow: 1px 2px 3px var(--color-secundario);
@@ -225,45 +228,46 @@ input:checked+.slider:before {
     background-color: var(--color-principal);
     box-shadow: 0 5px var(--color-secundario);
     transform: translateY(4px);
-  }
-
-.negar-pass{
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
-.negar-pass input{
+.negar-pass {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.negar-pass input {
     background-color: var(--color-secundario);
     border-radius: 50px;
 }
-.negar-pass label{
-    width: 190px;
-    font-style: italic;
 
+.negar-pass label {
+    width: 190px;
+    color: var(--color-secundario);
 }
 
-.opciones{
+.opciones {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.alineamiento{
+
+.alineamiento {
     text-align: left;
     vertical-align: center;
     font-size: 14px;
 }
 
-.class-opt{
+.class-opt {
     margin-bottom: 8px;
 }
-.class-opt:default{
+
+.class-opt:default {
     border-color: aqua;
 }
 
-.contenedor-setting{
+.contenedor-setting {
     display: flex;
     width: 100%;
     justify-content: flex-end;
@@ -273,7 +277,7 @@ input:checked+.slider:before {
     padding-right: 15px;
 }
 
-.btnSetting{
+.btnSetting {
     padding: 0.5em 0.5em;
     border: none;
     border-radius: .5rem;
@@ -283,33 +287,40 @@ input:checked+.slider:before {
     cursor: pointer;
     transition: .2s ease-in-out;
     box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
-                -6px -6px 10px rgba(255, 255, 255, .5),
-                6px 6px 8px rgba(255, 255, 255, .075),
-                6px 6px 10px rgba(0, 0, 0, .15);
+        -6px -6px 10px rgba(255, 255, 255, .5),
+        6px 6px 8px rgba(255, 255, 255, .075),
+        6px 6px 10px rgba(0, 0, 0, .15);
 }
 
-.btnSetting:hover{
+.btnSetting:hover {
     box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
-                -2px -2px 4px rgba(255, 255, 255, .4),
-                2px 2px 2px rgba(255, 255, 255, .05),
-                2px 2px 4px rgba(0, 0, 0, .1);
+        -2px -2px 4px rgba(255, 255, 255, .4),
+        2px 2px 2px rgba(255, 255, 255, .05),
+        2px 2px 4px rgba(0, 0, 0, .1);
 }
 
 .btnSetting:active {
     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
-                inset -2px -2px 4px rgba(255, 255, 255, .5),
-                inset 2px 2px 2px rgba(255, 255, 255, .075),
-                inset 2px 2px 4px rgba(0, 0, 0, .15);
-  }
+        inset -2px -2px 4px rgba(255, 255, 255, .5),
+        inset 2px 2px 2px rgba(255, 255, 255, .075),
+        inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
 
-  footer{
-    text-align: center;
-    font-size: xx-small;
-    padding-bottom: 10px;
-    color: var(--color-secundario);
-  }
+footer{
+        text-align: center;
+        font-size: xx-small;
+        padding-bottom: 10px;
+        color: var(--color-secundario);
+    }
 
-  a{
-    text-decoration: none;
-    color: var(--color-secundario);
-  }
+    a {
+        text-decoration: none;
+        color: var(--color-secundario);
+    }
+
+@media (max-width: 400px) {
+
+    #container{
+        margin-bottom: 40%;
+    }
+}

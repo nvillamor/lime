@@ -131,3 +131,4 @@ function MostrarConfiguracion(){
 function cambiarPass(){
   console.log('Codigo que cambia la contraseña');
 }
+
