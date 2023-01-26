@@ -60,11 +60,18 @@ main {
     border-style: dashed;
     border-color: var(--color-secundario);
 }
-
-
 .contenedor-pass {
     margin-bottom: 10px;
+    position: relative;
 }
+
+.ojito{
+    position: absolute;
+    cursor: pointer;
+    right: 3px;
+    top:0px;
+}
+
 
 .switch {
     position: relative;

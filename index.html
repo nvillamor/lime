@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,18 +10,22 @@
   <script type="text/javascript" src="./js/main.js"></script>
 
 </head>
+
 <body>
 
   <header>
     <div class="contenedor-setting">
-      <button hidden id="config-button" class="btnSetting" onclick=MostrarConfiguracion()><img src="./img/setting.png" width="25px" alt="setting.png"></button>
+      <button hidden id="config-button" class="btnSetting" onclick=MostrarConfiguracion()><img src="./img/setting.png"
+          width="25px" alt="setting.png"></button>
     </div>
 
   </header>
   <main>
     <div id="container">
       <div class="contenedor-pass">
-        <input type="text" class="input-pass" id="password" placeholder="Ingrese contraseña">    
+        <input type="password" onkeyup="mostrarOjitus()" class="input-pass" id="password" placeholder="Ingrese contraseña">
+        <span class="ojito oclose" style="display: none;" onclick="showPass()"><img src="./img/eye-closed.png" width=17px heigth=17px alt="img-eye-closed"></span>
+        <span class="ojito open" style="display: none;" onclick="showPass()"><img src="./img/eye.png" width=17px heigth=17px alt="img-eye"></span>
       </div>
       <label class="switch">
         <input type="checkbox" id="bloqueo" value="" onclick="myFunction(this)">
@@ -28,9 +33,9 @@
         <span class="on"><img src="./img/unlock.png" alt="unlock.png"></img></span>
         <span class="off"><img src="./img/padlock.png" alt="block.png"></img></span>
       </label>
-    
+
       <div class="contendorForm" style="display: none;">
-        <div class="config">      
+        <div class="config">
           <div class="titulo">
             <h3>CONFIGURA TU SCOOTER</h3>
           </div>
@@ -40,22 +45,27 @@
               <input type="checkbox" id="nopass" name="nopass" value="" onchange="NoPass(this)">
               <label for="nopass">No solicitar contraseña</label>
             </div>
-            <div>
-              <input id="ChangePass" type="text" class="inpass" placeholder="Ingrese contraseña nueva" oninput="pass1()">
-              <input id="Pass2" type="text" class="inpass" placeholder="Confirme contraseña nueva" oninput="pass2()">
-              <button type="button" id="CambiarPass" name="button" value= 'false' disabled onclick=ChangePass(this)>cambiar</button>                 
+            <div class="contenedor-pass">
+                <input id="ChangePass" type="password" class="inpass" placeholder="Ingrese contraseña nueva" oninput="pass1()">
+                <input id="Pass2" type="password" class="inpass" placeholder="Confirme contraseña nueva" oninput="pass2()">
+              <button type="button" id="CambiarPass" name="button" value='false' disabled
+                onclick=ChangePass(this)>cambiar</button>
             </div>
-            
+
             <div class="opciones">
               <h4 class="subtitulo">Auto-Bloqueo</h4>
               <div class="alineamiento">
-                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo1" value="0" onchange="sendData(this)">    
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo1" value="0"
+                  onchange="sendData(this)">
                 <label for="opcion1">AL APAGAR</label><br>
-                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo2" value="60" onchange="sendData(this)">    
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo2" value="60"
+                  onchange="sendData(this)">
                 <label for="opcion2">1 Minuto</label><br>
-                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo3" value="300" onchange="sendData(this)">    
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo3" value="300"
+                  onchange="sendData(this)">
                 <label for="opcion3">5 Minutos</label><br>
-                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo4" value="-1" onchange="sendData(this)">    
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo4" value="-1"
+                  onchange="sendData(this)">
                 <label for="opcion4">NUNCA</label><br>
               </div>
             </div>
@@ -65,4 +75,5 @@
     </div>
   </main>
 </body>
+
 </html>

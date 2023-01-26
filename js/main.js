@@ -181,7 +181,7 @@ function myFunction(elemento) {
     }
   }
 
-  /* funciones dvdcom */
+  
 
 function MostrarConfiguracion(){
   const panel = document.querySelector('.contendorForm');
@@ -224,3 +224,26 @@ function validar(){
    }
 }
 
+/* funciones dvdcom */
+function mostrarOjitus(){
+  let ojitoCerrado = document.querySelector('.oclose');
+  ojitoCerrado.setAttribute("style","display: block;");
+  if (document.querySelector('.input-pass').value === ""){
+    ojitoCerrado.setAttribute("style","display: none;")
+  }
+}
+
+function showPass(){
+  let ojitoAbierto = document.querySelector('.open');
+  let ojitoCerrado = document.querySelector('.oclose');
+  let input = document.querySelector('.input-pass');
+  let tipo = input.getAttribute('type');
+  tipo === "password" ? input.setAttribute('type','texto') : input.setAttribute('type','password');
+  if (tipo === 'password'){
+    ojitoCerrado.setAttribute("style","display: none;")
+    ojitoAbierto.setAttribute("style","display: block;");
+  }else{
+    ojitoCerrado.setAttribute("style","display: block;")
+    ojitoAbierto.setAttribute("style","display: none;");
+  }
+}
