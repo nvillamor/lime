@@ -11,12 +11,7 @@ window.addEventListener('DOMContentLoaded',
   }, false);
 
 function NoPass() { 
-    var checkBoxNoPass = document.getElementById("nopass");
-    if (checkBox.checked) {
-      alert('check');
-    } else {
-      alert('uncheck');
-    }
+    
 }
 
 
@@ -114,7 +109,13 @@ function ChangePass(elemento) {
 }
 
 function myFunction(elemento) {
-  
+
+  var checkBoxNoPass = document.getElementById("nopass");
+  if (checkBoxNoPass.checked) {
+    document.getElementById('password').value = pass;
+    document.getElementById('password').hidden = true;
+  }
+
   var checkBox = document.getElementById("bloqueo");
   var text = document.getElementById('password').value;
     if (text === pass) {
@@ -142,7 +143,13 @@ function myFunction(elemento) {
     document.getElementById('estado').style.color = "green";
     document.getElementById('bloqueo').checked = false;
     //document.getElementById('CambiarPass').hidden = true;
-    document.getElementById('password').hidden = false;
+    var checkBoxNoPass = document.getElementById("nopass");
+    if (checkBoxNoPass.checked) {
+      document.getElementById('password').value = pass;
+      document.getElementById('password').hidden = true;
+    } else {
+      document.getElementById('password').hidden = false;
+    }    
     document.getElementById('config-button').hidden = true;
     document.querySelector('.contendorForm').style = "display: none"; 
     const collection = document.getElementsByName('TiempoBloqueo');
