@@ -67,8 +67,12 @@ function processData(data)
 
   if (nopass === true)  {
     document.getElementById('nopass').checked = true;
+    document.getElementById('password').hidden = true;
+    document.getElementById('config-button').hidden = false;
   } else if (nopass === false) {
     document.getElementById('nopass').checked = false;
+    document.getElementById('password').hidden = false;
+    document.getElementById('config-button').hidden = true;
   }
 
   switch (tiempo) {
