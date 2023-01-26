@@ -224,7 +224,12 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
-.form-pass button:active {
+.form-pass button:disabled, button[disabled] {
+    background-color: var(--color-secundario);
+    box-shadow: none;
+}
+
+.form-pass button:active, button[enabled] {
     background-color: var(--color-principal);
     box-shadow: 0 5px var(--color-secundario);
     transform: translateY(4px);

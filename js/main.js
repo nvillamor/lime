@@ -108,7 +108,7 @@ function ChangePass(elemento) {
     document.getElementById('Pass2').value = "";
     document.getElementById('ChangePass').disabled = true;
     
-    document.getElementById('CambiarPass').disabled = true;
+    document.getElementById('CambiarPass').hidden = true;
     
     sendData(elemento);
   }
@@ -119,7 +119,6 @@ function myFunction(elemento) {
   var checkBoxNoPass = document.getElementById("nopass");
   if (checkBoxNoPass.checked) {
     document.getElementById('password').value = pass;
-    alert(pass);
     document.getElementById('password').hidden = true;
   }
 
@@ -147,7 +146,6 @@ function myFunction(elemento) {
   function BLOQUEO() {
     document.getElementById('password').placeholder = "Ingrese contraseña";
     document.getElementById('bloqueo').checked = false;
-    //document.getElementById('CambiarPass').hidden = true;
     var checkBoxNoPass = document.getElementById("nopass");
     if (checkBoxNoPass.checked) {
       document.getElementById('password').value = pass;
@@ -169,7 +167,7 @@ function myFunction(elemento) {
     document.getElementById('ChangePass').disabled = false;
 
     document.getElementById('config-button').hidden = false;
-    //document.getElementById('CambiarPass').hidden = false;
+    document.getElementById('CambiarPass').hidden = false;
     document.getElementById('password').hidden = true;
     document.getElementById('password').value = "";
     document.getElementById('ChangePass').placeholder = "Ingrese nueva contraseña";
@@ -215,7 +213,7 @@ function pass2(){
 function validar(){
   var pass1 = document.getElementById('ChangePass').value;
   var pass2 = document.getElementById('Pass2').value;
-  if ((pass1 === "") || (pass1 === pass2)) {
+  if ((pass1 !== "") && (pass1 === pass2)) {
     document.getElementById('CambiarPass').disabled = false;
   } else {
     document.getElementById('CambiarPass').disabled = true;
