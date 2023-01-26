@@ -128,9 +128,7 @@ function myFunction(elemento) {
   };
 
   function BLOQUEO() {
-    document.getElementById('estado').innerHTML = "Monopatín BLOQUEADO";
     document.getElementById('password').placeholder = "Ingrese contraseña";
-    document.getElementById('estado').style.color = "green";
     document.getElementById('bloqueo').checked = false;
     //document.getElementById('CambiarPass').hidden = true;
     var checkBoxNoPass = document.getElementById("nopass");
@@ -151,8 +149,6 @@ function myFunction(elemento) {
 
   function DESBLOQUEO() {
     document.getElementById('config-button').hidden = false;
-    document.getElementById('estado').innerHTML = "Monopatín DESBLOQUEADO";
-    document.getElementById('estado').style.color = "red";
     //document.getElementById('CambiarPass').hidden = false;
     document.getElementById('password').hidden = true;
     document.getElementById('password').value = "";
