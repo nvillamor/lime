@@ -104,7 +104,12 @@ function ChangePass(elemento) {
     
     document.getElementById('ChangePass').value = "";
     document.getElementById('ChangePass').placeholder = "Contraseña modificada";
-    //document.getElementById('CambiarPass').hidden = true;
+    document.getElementById('Pass2').hidden = true;
+    document.getElementById('Pass2').value = "";
+    document.getElementById('ChangePass').disabled = true;
+    
+    document.getElementById('CambiarPass').disabled = true;
+    
     sendData(elemento);
   }
 }
@@ -160,6 +165,9 @@ function myFunction(elemento) {
   }
 
   function DESBLOQUEO() {
+    document.getElementById('Pass2').hidden = false;
+    document.getElementById('ChangePass').disabled = false;
+
     document.getElementById('config-button').hidden = false;
     //document.getElementById('CambiarPass').hidden = false;
     document.getElementById('password').hidden = true;
@@ -188,8 +196,9 @@ function pass1(){
   } else {
     document.getElementById('Pass2').style = "border: 2px var(--color-principal)";
    }
-
+ validar();
 }
+
 function pass2(){
 
   var pass1 = document.getElementById('ChangePass').value;
@@ -200,6 +209,16 @@ function pass2(){
   } else {
     document.getElementById('Pass2').style = "border: solid 2px red";
   }
+  validar();
+}
 
+function validar(){
+  var pass1 = document.getElementById('ChangePass').value;
+  var pass2 = document.getElementById('Pass2').value;
+  if ((pass1 === "") || (pass1 === pass2)) {
+    document.getElementById('CambiarPass').disabled = false;
+  } else {
+    document.getElementById('CambiarPass').disabled = true;
+   }
 }
 
