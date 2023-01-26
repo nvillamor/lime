@@ -6,8 +6,6 @@
   <link rel="stylesheet" href="./css/styles.css">
   <title>SCOOTER CONFIG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
- 
   <script type="text/javascript" src="./js/main.js"></script>
 
 </head>
@@ -28,11 +26,11 @@
       <label class="switch">
         <input type="checkbox" id="bloqueo" value="" onclick="myFunction(this)">
         <span class="slider"></span>
-        <span class="on"><img src="./img/padlock.png" alt="block.png"></img></span>
-        <span class="off"><img src="./img/unlock.png" alt="unblock.png"></img></span>
+        <span class="on"><img src="./img/unlock.png" alt="unlock.png"></img></span>
+        <span class="off"><img src="./img/padlock.png" alt="block.png"></img></span>
       </label>
     
-      <div class="contendorForm" style="display: none">
+      <div class="contendorForm" style="display: none;">
         <div class="config">      
           <div class="titulo">
             <h3>CONFIGURA TU SCOOTER</h3>
@@ -40,7 +38,7 @@
           <div class="form-pass">
             <h4 class="subtitulo">Contraseña</h4>
             <div class="negar-pass">
-              <input type="checkbox" id="nopass" name="nopass" value="" onchange="NoPass()">
+              <input type="checkbox" id="nopass" name="nopass" value="" onchange="sendData(this)">
               <label for="nopass">No solicitar contraseña</label>
             </div>
             <div>

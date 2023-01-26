@@ -5,16 +5,6 @@ var tiempo = 0;
 var nopass = false;
 var connection = new WebSocket('ws://' + location.hostname + '/ws', ['arduino']);
 
-window.addEventListener('DOMContentLoaded', 
-  function() { 
-        NoPass();
-  }, false);
-
-function NoPass() { 
-    
-}
-
-
 connection.onopen = function () {
 	console.log('Connected: ');
   getData();
@@ -151,7 +141,7 @@ function myFunction(elemento) {
       document.getElementById('password').hidden = false;
     }    
     document.getElementById('config-button').hidden = true;
-    document.querySelector('.contendorForm').style = "display: none"; 
+    document.querySelector('.contendorForm').style = "display: none;";
     const collection = document.getElementsByName('TiempoBloqueo');
     for (let i = 0; i < collection.length; i++) {
       collection[i].disabled = true;
@@ -178,5 +168,5 @@ function myFunction(elemento) {
 function MostrarConfiguracion(){
   const panel = document.querySelector('.contendorForm');
   const display = panel.getAttribute('style');
-  display === "display: none" ? panel.setAttribute("style","display: block") : panel.setAttribute("style","display: none");
+  display === "display: none;" ? panel.setAttribute("style","display: block;") : panel.setAttribute("style","display: none;");
 }
