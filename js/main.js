@@ -124,6 +124,7 @@ function myFunction(elemento) {
   if (checkBoxNoPass.checked) {
     document.getElementById('password').value = pass;
     document.getElementById('password').hidden = true;
+    
   }
 
   var checkBox = document.getElementById("bloqueo");
@@ -131,6 +132,7 @@ function myFunction(elemento) {
     if (text === pass) {
       if (checkBox.checked) {
         DESBLOQUEO();
+        document.querySelector('.ojito').setAttribute("style","display: none;");
       } else {
         BLOQUEO();
       } 
@@ -139,6 +141,7 @@ function myFunction(elemento) {
         document.getElementById('password').value = "";
         BLOQUEO();
         document.getElementById('password').placeholder = "Contraseña INCORRECTA";
+        document.querySelector('.ojito').setAttribute("style","display: none;");
       } else { 
         BLOQUEO();
       }
