@@ -132,7 +132,8 @@ function myFunction(elemento) {
     if (text === pass) {
       if (checkBox.checked) {
         DESBLOQUEO();
-        document.querySelector('.ojito').setAttribute("style","display: none;");
+        document.querySelector('.oclose').setAttribute("style","display: none;");
+        document.querySelector('.open').setAttribute("style","display: none;");
       } else {
         BLOQUEO();
       } 
@@ -229,11 +230,20 @@ function validar(){
 
 /* funciones dvdcom */
 function mostrarOjitus(){
+  let ojitoAbierto = document.querySelector('.open');
   let ojitoCerrado = document.querySelector('.oclose');
-  ojitoCerrado.setAttribute("style","display: block;");
+  let input = document.querySelector('.input-pass');
+  let tipo = input.getAttribute('type');
+  if (tipo === "password"){
+    ojitoCerrado.setAttribute("style","display: block;");
+  }else{
+    ojitoAbierto.setAttribute("style","display: block;");
+  };
   if (document.querySelector('.input-pass').value === ""){
-    ojitoCerrado.setAttribute("style","display: none;")
-  }
+    input.setAttribute('type','password');
+    ojitoCerrado.setAttribute("style","display: none;");
+    ojitoAbierto.setAttribute("style","display: none;");
+  };
 }
 
 function showPass(){
