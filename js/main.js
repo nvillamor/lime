@@ -1,4 +1,3 @@
-
 var pass = 'mi-texto';
 var bloqueo = false;
 var tiempo = 0;
@@ -58,11 +57,18 @@ function processData(data)
   pass = json.pass;
   bloqueo = json.bloqueo; 
   tiempo = json.tiempo;
+  nopass = json.nopass;
 
   if (bloqueo === true)  {
     document.getElementById('bloqueo').checked = true;
   } else if (bloqueo === false) {
     document.getElementById('bloqueo').checked = false;
+  }
+
+  if (nopass === true)  {
+    document.getElementById('nopass').checked = true;
+  } else if (nopass === false) {
+    document.getElementById('nopass').checked = false;
   }
 
   switch (tiempo) {
@@ -85,6 +91,11 @@ function processData(data)
   
 }
 
+function NoPass(elemento) {
+  elemento.value = document.getElementById('nopass').checked;
+  sendData(elemento);
+}
+
 function ChangePass(elemento) {
   var checkBox = document.getElementById("bloqueo");
     if (checkBox.checked) {   
@@ -103,6 +114,7 @@ function myFunction(elemento) {
   var checkBoxNoPass = document.getElementById("nopass");
   if (checkBoxNoPass.checked) {
     document.getElementById('password').value = pass;
+    alert(pass);
     document.getElementById('password').hidden = true;
   }
 
@@ -166,3 +178,28 @@ function MostrarConfiguracion(){
   const display = panel.getAttribute('style');
   display === "display: none;" ? panel.setAttribute("style","display: block;") : panel.setAttribute("style","display: none;");
 }
+
+function pass1(){
+ var pass1 = document.getElementById('ChangePass').value;
+ var pass2 = document.getElementById('Pass2').value;
+
+  if (pass1 !== pass2 ){
+    document.getElementById('Pass2').style = "border: solid 2px red";
+  } else {
+    document.getElementById('Pass2').style = "border: 2px var(--color-principal)";
+   }
+
+}
+function pass2(){
+
+  var pass1 = document.getElementById('ChangePass').value;
+  var pass2 = document.getElementById('Pass2').value;
+ 
+  if (pass1 === pass2 ){
+    document.getElementById('Pass2').style = "border: 2px var(--color-principal)";
+  } else {
+    document.getElementById('Pass2').style = "border: solid 2px red";
+  }
+
+}
+

@@ -37,12 +37,12 @@
           <div class="form-pass">
             <h4 class="subtitulo">Contraseña</h4>
             <div class="negar-pass">
-              <input type="checkbox" id="nopass" name="nopass" value="" onchange="sendData(this)">
+              <input type="checkbox" id="nopass" name="nopass" value="" onchange="NoPass(this)">
               <label for="nopass">No solicitar contraseña</label>
             </div>
             <div>
-              <input id="ChangePass" type="text" class="inpass" placeholder="Ingrese contraseña nueva">
-              <input type="text" class="inpass" placeholder="Confirme contraseña nueva">
+              <input id="ChangePass" type="text" class="inpass" placeholder="Ingrese contraseña nueva" oninput="pass1()">
+              <input id="Pass2" type="text" class="inpass" placeholder="Confirme contraseña nueva" oninput="pass2()">
               <button type="button" id="CambiarPass" name="button" value= 'false' onclick=ChangePass(this)>cambiar</button>                 
             </div>
             
