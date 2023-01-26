@@ -1,67 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
-  <title>Mi Scooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>SCOOTER CONFIG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
+  <script type="text/javascript" src="./js/main.js"></script>
+
 </head>
 <body>
-  <header>
-      <div class="contenedor-setting">
-      <button class="btnSetting" onclick=MostrarConfiguracion()><img src="./img/setting.png" width="25px" alt="setting.png"></button>
-      </div>
-  </header>
-  <main>      
-    <div id="container">
-        <div class="contenedor-pass">
-        <input type="text" class="input-pass" placeholder="Ingrese una contraseña">
-        </div>
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-            <span class="on"><img src="./img/padlock.png" alt="block.png"></img></span>
-            <span class="off"><img src="./img/unlock.png" alt="unblock.png"></img></span>
-          </label>
-        <div class="contendorForm" style="display: none">
-              <div class="config">
-                <div class="titulo">
-                  <h3>CONFIGURA TU SCOOTER</h3>
-                </div>
-                <div class="form-pass">
-                  <h4 class="subtitulo">Contraseña</h4>
-                  <div class="negar-pass">
-                    <input type="checkbox" id="negacion" name="negacion" value="false">
-                    <label for="negacion">No solicitar contraseña</label>
-                  </div>
-                  <input type="text" class="inpass" placeholder="Ingrese contraseña actual">
-                  <input type="text" class="inpass" placeholder="Ingrese contraseña nueva">
-                  <input type="text" class="inpass" placeholder="Confirme contraseña nueva">
-                  <button type="button" name="button" onclick=cambiarPass()>cambiar</button>                  
-                </div>
-                <div class="opciones">
-                  <h4 class="subtitulo">Auto-Bloqueo</h4>
-                  <div class="alineamiento">
-                      <input type="radio" class="class-opt" id="opcion1" name="opt" value="0">
-                      <label for="opcion1">AL APAGAR</label><br>
-                      <input type="radio" class="class-opt"  id="opcion2" name="opt" value="60">
-                      <label for="vehicle2">1 Minuto</label><br>
-                      <input type="radio" class="class-opt" id="opcion3" name="opt" value="300">
-                      <label for="opcion3">5 Minutos</label><br>
-                      <input type="radio" class="class-opt"  id="opcion4" name="opt" value="-1">
-                      <label for="opcion4">NUNCA</label><br>
-                  </div>
 
-                </div>
-                
+  <header>
+    <div class="contenedor-setting">
+      <button hidden id="config-button" class="btnSetting" onclick=MostrarConfiguracion()><img src="./img/setting.png" width="25px" alt="setting.png"></button>
+    </div>
+
+    <p id="estado" class="h5"></p>
+  </header>
+  <main>
+    <div id="container">
+      <div class="contenedor-pass">
+        <input type="text" class="input-pass" id="password" placeholder="Ingrese contraseña">    
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="bloqueo" value="" onclick="myFunction(this)">
+        <span class="slider"></span>
+        <span class="on"><img src="./img/padlock.png" alt="block.png"></img></span>
+        <span class="off"><img src="./img/unlock.png" alt="unblock.png"></img></span>
+      </label>
+    
+      <div class="contendorForm" style="display: none">
+        <div class="config">      
+          <div class="titulo">
+            <h3>CONFIGURA TU SCOOTER</h3>
+          </div>
+          <div class="form-pass">
+            <h4 class="subtitulo">Contraseña</h4>
+            <div class="negar-pass">
+              <input type="checkbox" id="nopass" name="nopass" value="" onchange="NoPass()">
+              <label for="nopass">No solicitar contraseña</label>
+            </div>
+            <div>
+              <input id="ChangePass" type="text" class="inpass" placeholder="Ingrese contraseña nueva">
+              <input type="text" class="inpass" placeholder="Confirme contraseña nueva">
+              <button type="button" id="CambiarPass" name="button" value= 'false' onclick=ChangePass(this)>cambiar</button>                 
+            </div>
+            
+            <div class="opciones">
+              <h4 class="subtitulo">Auto-Bloqueo</h4>
+              <div class="alineamiento">
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo1" value="0" onchange="sendData(this)">    
+                <label for="opcion1">AL APAGAR</label><br>
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo2" value="60" onchange="sendData(this)">    
+                <label for="opcion2">1 Minuto</label><br>
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo3" value="300" onchange="sendData(this)">    
+                <label for="opcion3">5 Minutos</label><br>
+                <input class="class-opt" type="radio" name="TiempoBloqueo" id="CambiarTiempo4" value="-1" onchange="sendData(this)">    
+                <label for="opcion4">NUNCA</label><br>
               </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </main>
-  <footer>
-    <p>CopyRigth &copy; 2023 <a href="https://github.com/Dvdcom">Dvdcom</a></p>
-  </footer>
-  <script src="./js/main.js"></script>
 </body>
 </html>
