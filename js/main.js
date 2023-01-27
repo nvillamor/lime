@@ -1,7 +1,7 @@
 var pass = 'mi-texto';
-var bloqueo = false;
+var bloqueo = 'false';
 var tiempo = 0;
-var nopass = false;
+var nopass = 'false';
 var connection = new WebSocket('ws://' + location.hostname + '/ws', ['arduino']);
 
 connection.onopen = function () {
@@ -14,7 +14,7 @@ connection.onerror = function (error) {
 };
 
 connection.onmessage = function (e) {
-  console.log('Server: ', e.data);
+  //console.log('Server: ', e.data);
   processData(e.data);
 };
 
@@ -52,24 +52,24 @@ function getData()
 function processData(data)
 {
   let json = JSON.parse(data); 
-  console.log(json);
+  //console.log(json);
 
   pass = json.pass;
   bloqueo = json.bloqueo; 
   tiempo = json.tiempo;
   nopass = json.nopass;
 
-  if (bloqueo === true)  {
+  if (bloqueo === 'true')  {
     document.getElementById('bloqueo').checked = true;
   } else if (bloqueo === false) {
     document.getElementById('bloqueo').checked = false;
   }
 
-  if (nopass === true)  {
+  if (nopass === 'true')  {
     document.getElementById('nopass').checked = true;
     document.getElementById('password').hidden = true;
     document.getElementById('config-button').hidden = false;
-  } else if (nopass === false) {
+  } else if (nopass === 'false') {
     document.getElementById('nopass').checked = false;
     document.getElementById('password').hidden = false;
     document.getElementById('config-button').hidden = true;
@@ -139,6 +139,8 @@ function myFunction(elemento) {
         document.getElementById('password').value = "";
         BLOQUEO();
         document.getElementById('password').placeholder = "Contraseña INCORRECTA";
+        document.getElementById('ojitus').style = "display: none;";
+        document.getElementById('ojitus2').style = "display: none;";
       } else { 
         BLOQUEO();
       }
@@ -154,6 +156,7 @@ function myFunction(elemento) {
     if (checkBoxNoPass.checked) {
       document.getElementById('password').value = pass;
       document.getElementById('password').hidden = true;
+      document.getElementById('ojitus').style = "display: none;";
     } else {
       document.getElementById('password').hidden = false;
     }    
@@ -173,6 +176,7 @@ function myFunction(elemento) {
     document.getElementById('config-button').hidden = false;
     document.getElementById('CambiarPass').hidden = false;
     document.getElementById('password').hidden = true;
+    document.getElementById('ojitus').style = "display: none;";
     document.getElementById('password').value = "";
     document.getElementById('ChangePass').placeholder = "Ingrese nueva contraseña";
     const collection = document.getElementsByName("TiempoBloqueo");
@@ -181,9 +185,7 @@ function myFunction(elemento) {
     }
   }
 
-  
-
-function MostrarConfiguracion(){
+ function MostrarConfiguracion(){
   const panel = document.querySelector('.contendorForm');
   const display = panel.getAttribute('style');
   display === "display: none;" ? panel.setAttribute("style","display: block;") : panel.setAttribute("style","display: none;");
@@ -224,9 +226,8 @@ function validar(){
    }
 }
 
-/* funciones dvdcom */
 function mostrarOjitus(){
-  let ojitoCerrado = document.querySelector('.oclose');
+  let ojitoCerrado = document.querySelector('.ojito');
   ojitoCerrado.setAttribute("style","display: block;");
   if (document.querySelector('.input-pass').value === ""){
     ojitoCerrado.setAttribute("style","display: none;")
@@ -234,16 +235,11 @@ function mostrarOjitus(){
 }
 
 function showPass(){
-  let ojitoAbierto = document.querySelector('.open');
-  let ojitoCerrado = document.querySelector('.oclose');
-  let input = document.querySelector('.input-pass');
-  let tipo = input.getAttribute('type');
-  tipo === "password" ? input.setAttribute('type','texto') : input.setAttribute('type','password');
-  if (tipo === 'password'){
-    ojitoCerrado.setAttribute("style","display: none;")
-    ojitoAbierto.setAttribute("style","display: block;");
-  }else{
-    ojitoCerrado.setAttribute("style","display: block;")
-    ojitoAbierto.setAttribute("style","display: none;");
+  if (document.getElementById("password").type == "text"){
+    document.getElementById("ojo").src = "./img/eye-closed.png";
+    document.getElementById("password").type = "password"
+  } else if (document.getElementById("password").type == "password"){
+    document.getElementById("ojo").src = "./img/eye.png";
+    document.getElementById("password").type = "text";
   }
 }
