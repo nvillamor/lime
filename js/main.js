@@ -102,19 +102,18 @@ function NoPass(elemento) {
 
 function ChangePass(elemento) {
   var checkBox = document.getElementById("bloqueo");
-    if (checkBox.checked) {   
-    pass = document.getElementById('ChangePass').value;
-    document.getElementById('CambiarPass').value = pass;
-    
-    document.getElementById('ChangePass').value = "";
-    document.getElementById('ChangePass').placeholder = "Contraseña modificada";
-    document.getElementById('Pass2').hidden = true;
-    document.getElementById('Pass2').value = "";
-    document.getElementById('ChangePass').disabled = true;
-    
-    document.getElementById('CambiarPass').hidden = true;
-    
-    sendData(elemento);
+  if (document.getElementById('ChangePass').value.length !== 0 ){
+      if (checkBox.checked) {   
+        pass = document.getElementById('ChangePass').value;
+          document.getElementById('CambiarPass').value = pass;
+          document.getElementById('ChangePass').value = "";
+          document.getElementById('ChangePass').placeholder = "Contraseña modificada";
+          document.getElementById('Pass2').hidden = true;
+          document.getElementById('Pass2').value = "";
+          document.getElementById('ChangePass').disabled = true;
+          document.getElementById('CambiarPass').hidden = true;
+        sendData(elemento);
+      }
   }
 }
 
@@ -140,7 +139,6 @@ function myFunction(elemento) {
         BLOQUEO();
         document.getElementById('password').placeholder = "Contraseña INCORRECTA";
         document.getElementById('ojitus').style = "display: none;";
-        document.getElementById('ojitus2').style = "display: none;";
       } else { 
         BLOQUEO();
       }
@@ -166,7 +164,6 @@ function myFunction(elemento) {
     for (let i = 0; i < collection.length; i++) {
       collection[i].disabled = true;
     }
-    console.log(pass);
   }
 
   function DESBLOQUEO() {
