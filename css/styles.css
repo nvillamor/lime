@@ -141,7 +141,7 @@ input:checked+.slider:before {
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 330px;
+    height: 310px;
 }
 
 .config {
@@ -233,10 +233,10 @@ input:checked+.slider:before {
 
 .form-pass button:disabled, button[disabled] {
     background-color: var(--color-secundario);
-    box-shadow: none;
+    transform: translateY(4px);
 }
 
-.form-pass button:active, button[enabled] {
+.form-pass button:active {
     background-color: var(--color-principal);
     box-shadow: 0 5px var(--color-secundario);
     transform: translateY(4px);

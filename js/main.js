@@ -61,8 +61,10 @@ function processData(data)
 
   if (bloqueo === 'true')  {
     document.getElementById('bloqueo').checked = true;
+    document.getElementById('config-button').hidden = true;
   } else if (bloqueo === false) {
     document.getElementById('bloqueo').checked = false;
+    document.getElementById('config-button').hidden = false;
   }
 
   if (nopass === 'true')  {
@@ -104,16 +106,13 @@ function ChangePass(elemento) {
   var checkBox = document.getElementById("bloqueo");
     if (checkBox.checked) {   
     pass = document.getElementById('ChangePass').value;
-    document.getElementById('CambiarPass').value = pass;
-    
+    document.getElementById('CambiarPass').value = pass;   
     document.getElementById('ChangePass').value = "";
     document.getElementById('ChangePass').placeholder = "Contraseña modificada";
     document.getElementById('Pass2').hidden = true;
     document.getElementById('Pass2').value = "";
     document.getElementById('ChangePass').disabled = true;
-    
-    document.getElementById('CambiarPass').hidden = true;
-    
+    document.getElementById('CambiarPass').hidden = true; 
     sendData(elemento);
   }
 }
@@ -140,7 +139,6 @@ function myFunction(elemento) {
         BLOQUEO();
         document.getElementById('password').placeholder = "Contraseña INCORRECTA";
         document.getElementById('ojitus').style = "display: none;";
-        document.getElementById('ojitus2').style = "display: none;";
       } else { 
         BLOQUEO();
       }
@@ -172,9 +170,9 @@ function myFunction(elemento) {
   function DESBLOQUEO() {
     document.getElementById('Pass2').hidden = false;
     document.getElementById('ChangePass').disabled = false;
-
     document.getElementById('config-button').hidden = false;
     document.getElementById('CambiarPass').hidden = false;
+    document.getElementById('CambiarPass').disabled = true;
     document.getElementById('password').hidden = true;
     document.getElementById('ojitus').style = "display: none;";
     document.getElementById('password').value = "";
