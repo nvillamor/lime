@@ -19,7 +19,7 @@
   <main>
     <div id="container">
       <div class="contenedor-pass">
-        <input type="password" onkeyup="mostrarOjitus()" class="input-pass" id="password" placeholder="Ingrese contraseña">  
+        <input type="password" onkeyup="mostrarOjitus()" class="input-pass" id="password" maxlength="8" placeholder="Ingrese contraseña">  
         <span id="ojitus" class="ojito" style="display: none;" onclick="showPass()"><img id="ojo" src="./img/eye-closed.png" width=17px heigth=17px></span>
       </div>
       <label class="switch">
@@ -41,8 +41,8 @@
               <label for="nopass">No solicitar contraseña</label>
             </div>
             <div>
-              <input id="ChangePass" type="text" class="inpass" placeholder="Ingrese contraseña nueva" oninput="pass1()">
-              <input id="Pass2" type="text" class="inpass" placeholder="Confirme contraseña nueva" oninput="pass2()">
+              <input id="ChangePass" type="text" class="inpass" placeholder="Ingrese contraseña nueva" maxlength="8" oninput="pass1()">
+              <input id="Pass2" type="text" class="inpass" placeholder="Confirme contraseña nueva" maxlength="8" oninput="pass2()">
               <button type="button" id="CambiarPass" name="button" value='false' disabled onclick=ChangePass(this)>cambiar</button>                 
             </div>
             
